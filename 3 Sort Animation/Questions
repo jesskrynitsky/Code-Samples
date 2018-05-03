@@ -1,0 +1,14 @@
+CS 2110
+1.	
+Two different threads are running in each sort class, one to sort the array and one to draw the animation.  
+I used locks so that these methods do not change the state variables at the same time or get wrong information.  
+Only one thread can alter the state variables at a time.
+2.	
+Sleep means the thread does not run for a certain amount of time.  
+It remains in whatever state it was in when sleep is called.  
+Await means the thread is not going to run until it is told to continue, 
+and also if it is in a lock then it will release this lock for other threads to use. 
+3.	
+This creates a deadlock because the thread that await() was called on had the lock, 
+and now it is unlocking it for another thread to use but the other threads will only 
+know it is unlocked if sigal() or signallAll() is called.
